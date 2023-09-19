@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <style>
+ *{
+            margin:0px;
+            padding: 0px;
+            font-family:  'Poppins','sans-serif';
+
+        }
+       
+        .header{
+            min-height: 100vh;
+            width:100%;
+            background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(college7.png);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        nav{
+            display: flex;
+            padding: 2% 6%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav img{
+            width: 150px;
+        }
+        .nav-links{
+            flex: 1;
+            text-align: right;
+        }
+        .nav-links ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav-links ul li a{
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .nav-links ul li::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #f44336;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .nav-links ul li:hover::after{
+            width: 100%;
+        }
+        .text-box{
+            width: 90%;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+        .text-box h1{
+            font-size: 62px;
+        }
+        .text-box p{
+         margin:50px;
+         font-size: 14px;
+         color: white;
+        }
+        .course{
+      width: 80%;
+      margin: auto;
+      padding-top: 100px;
+      text-align: center;
+    }
+    .course p{
+     margin-top: 20px;
+    }
+    .course-row{
+      display: flex;
+     justify-content: space-between;
+    }
+    .course-col{
+      margin-left: 30px;
+      margin-top: 40px;
+      border-radius: 10px;
+      background-color: #fff3f3;
+      padding: 20px 12px;
+      transition: 0.5s;
+    }
+    .course-col h3{
+      text-align: center;
+      font-weight: 600px;
+      margin: 10px 0;
+    }
+    .course-col:hover{
+      box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+    }
+        .hero-btn{
+            display: inline-block;
+            text-decoration: none;
+            border: 1px solid white;
+            padding: 12px 34px;
+            font-size: 13px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+        .hero-btn:hover{
+            border: 1px solid #f44336;
+            background: #f44336;
+            transition: 1s;
+        }
+        nav .fa{
+            display: none;
+        }
+        .footer{
+        width: 100%;
+        text-align: center;
+        padding: 30px 0;
+      }
+      .footer h4{
+        margin-bottom: 25px;
+        margin-top: 20px;
+        font-weight: 600px;
+        text-align: center;
+      }
+      .icons .fa{
+        color: #f44336;
+        margin: 0 13px;
+        cursor: pointer;
+        padding: 18px 0;
+      }
+      .fa-heart-o{
+        color: #f44336;
+      }
+      .sub-header{
+height: 50vh;
+width: 100%;
+background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(college6.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+text-align: center;
+color: white;
+      }
+      .sub-header h1{
+        margin-top: 100px;
+      }
+      .about-us{
+        width: 80%;
+        margin: auto;
+        padding-top: 80px;
+        padding-bottom: 50px;
+      }
+      .row{
+        display: flex;
+      }
+      .about-col{
+        flex-basis: 48%;
+        padding: 30px 2px;
+      }
+      .about-col img{
+        width: 100%;
+      }
+      .about-col h1{
+        padding-top: 0;
+      }
+      .about-col p{
+        padding: 15px 0 25px;
+      }
+      .red-btn{
+        border: 1px solid #f44336;
+        background-color: transparent;
+        color: #f44336;
+      }
+      .red-btn:hover{
+        color: #fff;
+      }
+      .facilities{
+            width: 80%;
+            text-align: center;
+            margin: auto;
+            padding-top: 100px;
+        }
+        .facilities p{
+            padding-top: 10px;
+        }
+        .facilities-row{
+            margin-top: 20px;
+            display: flex;
+            
+            justify-content: space-between;
+        }
+        .facilities-col{
+            
+            width: 30%;
+            height: 360px;
+        }
+        .facilities-col img{
+            border-radius: 10px;
+            width: 100%;
+            height: 200px;
+        }
+        .facilities-col p{
+            padding: 0;
+        }
+        .facilities-col h3{
+            text-align: left;
+            margin-top: 16px;
+            margin-bottom: 15px;
+        }
+        .blog-content{
+            width: 80%;
+            padding: 60px 0;
+            margin: auto;
+        }
+        .blog-row{
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .blog-col-left{
+            width: 65%;
+        }
+        .blog-col-left img{
+            width: 100%;
+            height: 400px;
+        }
+        .blog-col-left h2{
+            color: #222;
+            font-weight: 600;
+            margin: 30px 0;
+        } 
+        .blog-col-left p{
+            color: #999;
+            text-align: justify;
+        }
+        .blog-col-right{
+            width: 30%;
+        }
+        .blog-col-right h3{
+            background: #f44336;
+            color: #fff;
+            
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .blog-col-right div{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #555;
+            padding: 8px;
+        }
+      .comment-box{
+        border: 1px solid #ccc;
+        margin: 50px 0;
+        padding: 10px 20px;
+      }
+      .comment-box h3{
+        text-align: left;
+      }
+      .comment-form input,textarea{
+        width: 100%;
+        padding: 10px;
+        margin: 15px 0;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        background-color: #f0f0f0;
+      }
+      .comment-form button{
+        margin: 10px 0;
+      }
+      @media (max-width:700px){
+            .text-box h1{
+            font-size: 20px;
+        } 
+        .nav-links ul li{
+            display: block;
+
+        }  
+        .nav-links{
+            position: absolute;
+            background-color: #f44336;
+            height: 100vh;
+            width: 200px;
+            top: 0;
+            right: -200px;
+            text-align: left;
+            z-index:2;
+            transition: 1s;
+        }
+        nav .fa{
+            display: block;
+            color: #fff;
+            margin:10px;
+            cursor: pointer;
+        }
+        .course-row{
+          flex-direction: column;
+        }
+        .nav-links ul{
+            padding: 30px;
+        }
+        .row{
+            flex-direction: column;
+        }
+        .facilities-row{
+        flex-direction: column;
+      }
+      .facilities-col{
+        margin-top: 40px;
+        width: 100%;
+      }
+      .blog-row{
+        flex-direction: column;
+      }
+      .blog-col-left{
+        width: 100%;
+      } 
+      .blog-col-right{
+        width: 100%;
+      }
+    }
+    </style>
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href=""><img src="college13.png" alt=""></a>
+            <div class="nav-links" id="nav-links">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="college home page website.html">HOME</a></li>
+                    <li><a href="college home page website.html">ABOUT</a></li>
+                    <li><a href="college course page.html">COURSE</a></li>
+                    <li><a href="college blog page.html">BLOG</a></li>
+                    <li><a href="college contact us page.html">CONTACT</a></li>
+    
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+      <h1>Our Certificate & Online Programs for 2021</h1>
+        
+        </section>
+        <section class="blog-content">
+            <div class="blog-row">
+                <div class="blog-col-left">
+                <img src="college11.jpg" alt="">
+                <h2>Our Certificate & Online Programs for 2021</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam tenetur voluptatibus dignissimos officiis dicta, placeat fugiat nam esse cum expedita, culpa tempora. Harum aperiam qui aspernatur nobis esse itaque dolorum, explicabo placeat deleniti, quis nesciunt soluta nam ducimus, eius mollitia illo? Culpa dolore quis, vitae sapiente iste voluptatem. Sed cupiditate, sequi quod ea debitis blanditiis ab. Labore voluptate eos autem?</p>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, architecto eaque. Fugit soluta inventore enim hic mollitia sed molestiae neque consequatur voluptates quam eaque voluptatem sapiente, ad in facilis harum repudiandae non necessitatibus? Eum molestias at fugiat aspernatur temporibus facilis eaque tenetur ratione, quisquam veniam nihil, velit doloribus modi ea suscipit asperiores odio libero! Labore distinctio, possimus reprehenderit incidunt quisquam nihil vitae quae omnis, quos laudantium ipsam aut, mollitia sunt.</p>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi vero modi eaque hic asperiores error? Deserunt sapiente soluta dolore. Perspiciatis error rem nam atque corrupti nisi inventore tenetur suscipit repellendus, obcaecati quos tempore harum autem, numquam perferendis officia ipsam quae odio voluptatum sint delectus blanditiis aperiam aut culpa. Nulla temporibus hic quaerat unde, aliquid reiciendis debitis dolorum quasi. Labore, vel.</p>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga labore esse eligendi. Optio tenetur necessitatibus impedit quas, ipsam dolor explicabo iste. Ratione quae minima ab ipsum, vero quas eius labore nesciunt sint necessitatibus magnam expedita vel voluptatibus quo officiis deserunt? Doloremque libero totam eveniet architecto facilis iure labore assumenda nemo, quas adipisci suscipit corrupti hic odit doloribus animi obcaecati temporibus.</p>
+                <div class="comment-box">
+                    <h3>Leave a comment</h3>
+                    <form action="" class="comment-form">
+                       <input type="text" placeholder="Enter name">
+                       <input type="email" placeholder="Enter email">
+                       <textarea rows="5" placeholder="Your Comment"></textarea>
+                       <button type="submit" class="hero-btn" class="red-btn">Post comment</button>
+                    </form>
+                </div>
+                </div>
+                <div class="blog-col-right">
+                   <h3>Post Categories</h3>
+                   <div>
+                    <span>Business Analytic</span>
+                    <span>21</span>
+                   </div>
+                   <div>
+                    <span>Data Science</span>
+                    <span>28</span>
+                   </div>
+                   <div>
+                    <span>Machine Learning</span>
+                    <span>15</span>
+                   </div>
+                   <div>
+                    <span>Computer Science</span>
+                    <span>34</span>
+                   </div>
+                   <div>
+                    <span>Autocad</span>
+                    <span>42</span>
+                   </div>
+                   <div>
+                    <span>Journalism</span>
+                    <span>22</span>
+                   </div>
+                   <div>
+                    <span>Commerce</span>
+                    <span>30</span>
+                   </div>
+                   
+
+                </div>
+            </div>
+            
+        </section>
+       
+          
+        <section class="footer">
+            <h4>About Us</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas, minima similique aut, voluptate blanditiis <br>deleniti, officia optio soluta nam in aliquid sunt saepe quas veniam?</p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+                
+    
+            </div>
+            <p>Made With   <i class="fa fa-heart-o"></i> Easy Tutorials</p>
+        </section>
+        <script>
+            var navlinks=document.getElementById("nav-links");
+            function showMenu(){
+                navlinks.style.right="0"
+            }
+            function hideMenu(){
+                navlinks.style.right="-200px"
+            }
+        </script>
+</body>
+</html>
